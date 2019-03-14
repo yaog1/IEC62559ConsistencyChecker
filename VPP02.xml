@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UseCase>
+    <id>VPP02 Exchange the VPP forecast with the DSO</id>
+    <name>Exchange the VPP forecast with the DSO</name>
+    <keywords>VPP operator, forecasts, grid stability, CIM</keywords>
+    <levelOfDepth>Use Case</levelOfDepth>
+    <namespace></namespace>
+    <prioritisation>mandatory</prioritisation>
+    <scope>&lt;p&gt;The VPPOP sends the expected power production and load (the VPP forecast)&amp;nbsp;to the DSO&amp;nbsp;for recognizing grid congestions early. If grid congestions are detected, the DSO will notify the VPP operator to adapt the forecast to participate on the Energy Exchange.&lt;/p&gt;
+</scope>
+    <viewPoint></viewPoint>
+    <Domain>Distribution</Domain>
+    <Domain>DER</Domain>
+    <Zone>Operation</Zone>
+    <Zone>Enterprise</Zone>
+    <ActorGrouping>
+        <id>18</id>
+        <name>Parties involved</name>
+        <description></description>
+        <Actor>
+            <id>120</id>
+            <name>DSO</name>
+            <description>&lt;p&gt;The DSO owns and manages an electric power distribution grid, which is naturally confined to certain areas in which the DSO operates in a rather solid monopoly situation.&amp;nbsp;Therefore, regulation policies commonly exclude DSOs from any energy trading business. While DSOs manage the interconnections with the superior transmission system and neighboring distribution systems, they have no direct control over the total energy flows across their grids. Still, they are responsible for safe and reliable operation of the electric power distribution across their grids, and may interfere with power flows only to maintain grid stability.&lt;/p&gt;
+</description>
+            <furtherInformation></furtherInformation>
+            <domain>Distribution</domain>
+            <zone>Enterprise</zone>
+            <zone>Operation</zone>
+            <zone>Field</zone>
+            <zone>Station</zone>
+            <zone>Process</zone>
+        </Actor>
+        <Actor>
+            <id>67</id>
+            <name>VPPOP</name>
+            <description>&lt;p&gt;The Virtual Power Plant Operator of a remote controlled VPP represents the central control centre. The VPPOP creates aggregated forecasts to trade energy on the energy market and calculates individual schedules for each DEUOP or DEU to control the energy production (or load) that the VPP inserts (drains). While physically the VPPOP may be connected with a DEUC directly, if no dedicated DEUOP exists, the communication always needs to be either VPPOP-DEUOP or DEUOP-DEUC, depending on which unit (VPPOP or DEUC) integrates the missing DEUOP interface.&lt;/p&gt;
+
+&lt;p&gt;In case &amp;ldquo;ancillary services&amp;rdquo; are legible and negotiated, the distribution system operator (DSO) can send grid requirements to the VPPOP. DEU control messages initiated by the DSO are then forwarded via the VPPOP to the addressed DEUOP or DEUC. In VHPready, the VPPOP is the control centre&lt;a href="#_ftn1" name="_ftnref1" title=""&gt;[1]&lt;/a&gt; of the VPP, comparable to the same instance of traditional large-scale power plants. VHPready is an industry alliance developing industry standards for managing DERs to participate in the energy trade. &lt;a href="#_ftn2" name="_ftnref2" title=""&gt;[2]&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href="#_ftnref1" name="_ftn1" title=""&gt;[1]&lt;/a&gt; In German, VHPready mentions the control center &amp;ldquo;Leitstelle&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="#_ftnref2" name="_ftn2" title=""&gt;[2]&lt;/a&gt; For further details about VHPready see https://www.vhpready.com/about-us/&lt;/p&gt;
+</description>
+            <furtherInformation></furtherInformation>
+            <domain>DER</domain>
+            <domain>Consumption</domain>
+            <zone>Market</zone>
+            <zone>Enterprise</zone>
+            <zone>Operation</zone>
+        </Actor>
+    </ActorGrouping>
+    <Condition>
+        <assumption>The production and load profile are transmitted to the system operator or the VPP operator. Based on the profiles, the operator creates production and load forecasts.</assumption>
+        <PreCondition>
+            <content>The assets created production and load profiles.</content>
+        </PreCondition>
+    </Condition>
+    <Diagram>
+        <name>Steps for exchanging the VPP forecast with the DSO</name>
+        <URI></URI>
+        <drawingType>other</drawingType>
+        <description></description>
+    </Diagram>
+    <GeneralRemark>
+        <content>The DSO needs the forecasts to optimize the management of the electric power system. These forecasts are unsuitable for negotiations on the electricity market, because forecasts do not have any legally binding nature.</content>
+    </GeneralRemark>
+    <GeneralRemark>
+        <content>Based on the forecasts from the various VPPs, power plants, loads and external services, precise forecasts about the grip stability can be made through the DSO.</content>
+    </GeneralRemark>
+    <Narrative>
+        <completeDescription>&lt;p&gt;The forecasts from the DEUs&amp;nbsp;are difficult to estimate. DEUs include actors with controllable loads as well as PV assets with an own energy storage for improving the consumption of private households. For this reason, the DSO also needs&amp;nbsp;more detailed information&amp;nbsp;to control the electric power system. Therefore, VPPOPs&amp;nbsp;transfer&amp;nbsp;their forecasts (see Use Case VPP-01: &amp;quot;Create individual forecasts for the VPP&amp;quot;) for each day to the DSO. However, these forecasts&amp;nbsp;have to consider as estimations and uncertainties have to be considered by the DSO, i.e. the DSO validates the forecasts from different VPPs, power plants and large loads. Also, external data, like the weather forecast, are considered by the DSO to validate the forecasts.&lt;/p&gt;
+
+&lt;p&gt;The validation by&amp;nbsp;the DSO&amp;nbsp;checks whether the electric power system&amp;nbsp;is balanced through the forecasts&amp;nbsp;of the various VPPs, other power plants and large loads. If it is not, the DSO&amp;nbsp;has to contact VPPOPs (or other operator)&amp;nbsp;to adapt their forecasts&amp;nbsp;to contribute to a stabile electric power system. After the validation and the possible adaption of the forecast, the VPPOP can participate on the Energy Exchange (see Use Case VPP-03: &amp;quot;Participate on the Energy exchange&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</completeDescription>
+        <shortDescription>&lt;p&gt;For recognizing grid congestions, the VPPOP sends its individual forecast to the DSO&amp;nbsp;to consider possible power grid requirements before the VPPOP participate on the Energy Exchange. Thus, the VPPOP can adapt its forecast regarding to the feedback of the DSO. This process helps to stabilize the electric power grid in an early stage.&lt;/p&gt;
+</shortDescription>
+    </Narrative>
+    <RelatedObjective>
+        <description></description>
+        <id>12</id>
+        <name>Recognizing grid congestions to intervene in time</name>
+    </RelatedObjective>
+    <RelatedObjective>
+        <description></description>
+        <id>24</id>
+        <name>Creating individual production profiles for assets to enable a flexible operational planning of the VPP</name>
+    </RelatedObjective>
+    <Reference>
+        <id>30</id>
+        <impact>Basis for the initial creation</impact>
+        <name>In2VPP – UC: 2.5 Dezentrale Erzeuger / Speicher poolen</name>
+        <originatorOrganisation>BMWi</originatorOrganisation>
+        <status>final</status>
+        <type>Deliverable</type>
+        <URI>http://www.in2vpp.de/</URI>
+    </Reference>
+    <Reference>
+        <id>31</id>
+        <impact>Definition of actors</impact>
+        <name>IEC Electropedia</name>
+        <originatorOrganisation>IEC</originatorOrganisation>
+        <status></status>
+        <type>Website</type>
+        <URI>http://www.electropedia.org</URI>
+    </Reference>
+    <Reference>
+        <id>32</id>
+        <impact>Definition of actors and used protocols</impact>
+        <name>Smart Grid Standards Map</name>
+        <originatorOrganisation>IEC</originatorOrganisation>
+        <status></status>
+        <type>Website</type>
+        <URI>http://smartgridstandardsmap.com</URI>
+    </Reference>
+    <Reference>
+        <id>33</id>
+        <impact>Describes the inter-control center communication protocol (TASE.2)</impact>
+        <name>Inter-Control Center Communications Protocol (ICCP, TASE.2): Threats to Data Security and Potential Solutions, EPRI, Palo Alto, CA: 2001. 1001977.</name>
+        <originatorOrganisation>EPRI</originatorOrganisation>
+        <status></status>
+        <type>Technical Report</type>
+        <URI>https://scadahacker.com/library/Documents/ICS_Vulnerabilities/EPRI%20-%20ICCP%20Protocol%20-%20Threats%20to%20Data%20Security%20and%20Potential%20Solutions.pdf</URI>
+    </Reference>
+    <Reference>
+        <id>34</id>
+        <impact></impact>
+        <name>EnergyIP – Smart-Grid-Applikationsplattform zur Verarbeitung großer Datenmengen im Netz (2016)</name>
+        <originatorOrganisation>Siemens</originatorOrganisation>
+        <status></status>
+        <type></type>
+        <URI></URI>
+    </Reference>
+    <Scenario>
+        <description>&lt;p&gt;The VPPOP transmits the current forecast for the next day to the DSO. The DSO needs the forecast to check whether the forecasts from different participants of the electric power system balance the power system. If necessary, the VPPOP has to adapt its forecast before participating on the Energy Exchange.&lt;/p&gt;
+</description>
+        <id>19</id>
+        <name>VPPOP transmits the forecast to the DSO</name>
+        <number>01</number>
+        <postCondition>The VPPOP can take part on the Energy Exchange</postCondition>
+        <preCondition>The VPPOP forecast exists</preCondition>
+        <triggeringEvent>The VPPOP transmits its forecast to the DSO</triggeringEvent>
+        <PrimaryActor>
+            <id>67</id>
+            <name>VPPOP</name>
+        </PrimaryActor>
+        <Step>
+            <description>&lt;p&gt;The VPPOP transfers the forecast to the DSO&amp;nbsp;via ICCP.&lt;/p&gt;
+</description>
+            <event>Created forecast for the next day</event>
+            <id>119</id>
+            <name>Transfer forecast</name>
+            <number>01</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>67</id>
+                <name>VPPOP</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>120</id>
+                <name>DSO</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>197</id>
+                <name>Forecast</name>
+            </InformationObject>
+            <Requirements>
+                <Requirement>
+                    <id>43</id>
+                    <name>Application of the ICCP</name>
+                    <requirementCategoryId>6</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The DSO&amp;nbsp;checks the forecasts&amp;nbsp;from the VPPOP with external data, i.e. with the forecasts from other power plants and loads as well as with&amp;nbsp;weather forecasts.&amp;nbsp;This validation is done to check&amp;nbsp;whether the electric power grid is balanced, when the forecast&amp;nbsp;are executed. If the DSO detects some imbalances, the DSO and the VPPOP have to coordinate a new forecast.&lt;/p&gt;
+</description>
+            <event>Got forecast from the VPPOP</event>
+            <id>120</id>
+            <name>Evaluate forecast</name>
+            <number>02</number>
+            <service>CREATE</service>
+            <InformationProducer>
+                <id>120</id>
+                <name>DSO</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>120</id>
+                <name>DSO</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>97</id>
+                <name>Weather forecast</name>
+            </InformationObject>
+            <InformationObject>
+                <id>197</id>
+                <name>Forecast</name>
+            </InformationObject>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The VPPOP and the DSO has to adapt the VPP forecast if the planned forecast will cause imbalances in the electric power system. The first adaption is done by the DSO, than the forecast is&amp;nbsp;transferred to the VPPOP&amp;nbsp;via ICCP. The VPPOP checks and takes the adapted forecast if it can be executed.&amp;nbsp;&lt;/p&gt;</description>
+            <event>If the DSO found some possible imbalances in the electric power system</event>
+            <id>124</id>
+            <name>Adapt forecast</name>
+            <number>03</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>120</id>
+                <name>DSO</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>67</id>
+                <name>VPPOP</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>197</id>
+                <name>Forecast</name>
+            </InformationObject>
+            <Requirements>
+                <Requirement>
+                    <id>45</id>
+                    <name>Application of the ICCP</name>
+                    <requirementCategoryId>6</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </Step>
+    </Scenario>
+    <UseCaseRelation>
+        <type>Associate</type>
+        <RelatedUseCase>
+            <id>16</id>
+            <name>VPP-01: Create individual forecast for the VPP</name>
+        </RelatedUseCase>
+    </UseCaseRelation>
+    <VersionInformation>
+        <approvalStatus>Extended Version</approvalStatus>
+        <areaOfExpertise></areaOfExpertise>
+        <changes>&lt;p&gt;Transmission to the IEC 62559-2 Template, translation in English and expansion of additional data&lt;/p&gt;
+</changes>
+        <date>2017-03-04T00:00:00.000+01:00</date>
+        <domainExpert></domainExpert>
+        <title></title>
+        <number>1.1</number>
+        <authors>M. Gottschalk</authors>
+    </VersionInformation>
+    <VersionInformation>
+        <approvalStatus>Final</approvalStatus>
+        <changes>Final description of the use case “8.1 Übertragung von Erzeugungs- und Verbrauchsprognosen an Interessenten”</changes>
+        <date>2014-01-02T00:00:00.000+01:00</date>
+        <number>1.0</number>
+        <authors>M. van Amelsvoort, M. Winter</authors>
+    </VersionInformation>
+    <VersionInformation/>
+    <InformationObjects>
+        <InformationObject>
+            <id>91</id>
+            <name>Region</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>92</id>
+            <name>Time</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>93</id>
+            <name>Assets list</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>94</id>
+            <name>Schedule list for assets</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>97</id>
+            <name>Weather forecast</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>98</id>
+            <name>Load forecast</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>99</id>
+            <name>Production forecast</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>197</id>
+            <name>Forecast</name>
+            <Requirements/>
+        </InformationObject>
+    </InformationObjects>
+<RequirementLibrary>
+  <RequirementCategory>
+    <description>Within this category, the specification from VHPReady is transferred to the requirements list of this use case. The VHPReady specification describes the communication between the VPP operator and the station control of the distributed energy, which is called technical unit in the VHPReady specificartion.</description>
+    <id>3</id>
+    <name>VHPR</name>
+  </RequirementCategory>
+  <RequirementCategory>
+    <description></description>
+    <id>6</id>
+    <name>R</name>
+  </RequirementCategory>
+  <RequirementCategory>
+    <description>Quality of Service (QoS) Issues address availability of the system, such as accepted downtime, recovery, backup, rollback, etc. QoS issues also address accuracy and precision of data, the frequency of data exchange and the necessary flexibility for future changes.</description>
+    <id>13</id>
+    <name>QoS</name>
+  </RequirementCategory>
+</RequirementLibrary>
+  <Glossary>
+	<term>
+		<name>Assets</name>
+		<description>Include DER and consumer which are participant of the VPP</description>
+	</term>
+	<term>
+		<name>DER</name>
+		<description>Distributed Energy Resources</description>
+	</term>
+	<term>
+		<name>EMS</name>
+		<description>Energy Management System</description>
+	</term>
+	<term>
+		<name>VPP</name>
+		<description>Virtual Power Plant</description>
+	</term>
+	<term>
+		<name>ICCP</name>
+		<description>Inter-Control Center Communication Protocol</description>
+	</term>
+</Glossary>
+</UseCase>

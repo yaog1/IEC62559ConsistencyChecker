@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UseCase>
+    <InformationObjects>
+        <InformationObject>
+            <id>193</id>
+            <name>Bus data object</name>
+            <Requirements>
+                <Requirement>
+                    <id>145</id>
+                    <requirementCategoryId>12</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </InformationObject>
+        <InformationObject>
+            <id>194</id>
+            <name>Traffic data object</name>
+            <Requirements>
+                <Requirement>
+                    <id>147</id>
+                    <requirementCategoryId>12</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </InformationObject>
+        <InformationObject>
+            <id>196</id>
+            <name>bus state object</name>
+            <Requirements>
+                <Requirement>
+                    <id>149</id>
+                    <requirementCategoryId>10</requirementCategoryId>
+                </Requirement>
+				<Requirement>
+                    <id>991919</id>
+                    <requirementCategoryId>909</requirementCategoryId>
+                </Requirement>
+				<Requirement>
+                    <id>197</id>
+                    <requirementCategoryId>12</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </InformationObject>
+        <InformationObject>
+            <id>197</id>
+            <name>Bicycle data object</name>
+            <Requirements>
+                <Requirement>
+                    <id>153</id>
+                    <requirementCategoryId>12</requirementCategoryId>
+                </Requirement>
+                <Requirement>
+                    <id>154</id>
+                    <requirementCategoryId>13</requirementCategoryId>
+				</Requirement>
+            </Requirements>
+        </InformationObject>
+        <InformationObject>
+            <id>198</id>
+            <name>Traffic light instructions</name>
+            <Requirements>
+                <Requirement>
+                    <id>163</id>
+                    <requirementCategoryId>12</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </InformationObject>
+    </InformationObjects>
+<RequirementLibrary>
+ <RequirementCategory>
+    <description>The data collection and transmission require special requirements.</description>
+    <id>9</id>
+    <name>DT</name>
+  </RequirementCategory>
+ <RequirementCategory>
+    <description>The duration of the data transfer shall not exceed 2 seconds.</description>
+    <id>10</id>
+    <name>DT-01</name>
+    <ParentCategory>
+      <id>9</id>
+      <name>DT</name>
+    </ParentCategory>
+  </RequirementCategory>
+ <RequirementCategory>
+    <description>The data size shall not exceed 20 mbit.</description>
+    <id>12</id>
+    <name>DT-03</name>
+    <ParentCategory>
+      <id>9</id>
+      <name>DT</name>
+    </ParentCategory>
+  </RequirementCategory>
+ <RequirementCategory>
+    <description>The data protection of the collected data has to fulfill the terms of data protection laws.</description>
+    <id>13</id>
+    <name>DT-04</name>
+    <ParentCategory>
+      <id>9</id>
+      <name>DT</name>
+    </ParentCategory>
+  </RequirementCategory>
+ <RequirementCategory>
+    <description>All requirements describing a general function of the System.</description>
+    <id>14</id>
+    <name>FR</name>
+  </RequirementCategory>
+ <RequirementCategory>
+    <description>The System have to differentiate between cars, local public transport vehicles and bicycles.</description>
+    <id>15</id>
+    <name>FR-01</name>
+    <ParentCategory>
+      <id>14</id>
+      <name>FR</name>
+    </ParentCategory>
+  </RequirementCategory>
+</RequirementLibrary>
+</UseCase>

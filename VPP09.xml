@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UseCase>
+    <id>VPP09 Provide measured values and meter data by the DEUC</id>
+    <name>Provide measured values and meter data by the DEUC</name>
+    <keywords>measuring points, controlling assets, balancing, grid stability, IEC 61850</keywords>
+    <levelOfDepth>Use Case</levelOfDepth>
+    <namespace></namespace>
+    <prioritisation>mandatory</prioritisation>
+    <scope>&lt;p&gt;The DEUCs collect&amp;nbsp;measured values from different measuring points within the VPP and stores these&amp;nbsp;to provide these data to the DSO and VPPOP. By means of these data, the VPPOP as well as the DSO can control the electric power system and imbalances should be reduced.&lt;/p&gt;
+</scope>
+    <viewPoint>Operation</viewPoint>
+    <Domain>DER</Domain>
+    <Domain>Consumption</Domain>
+    <Zone>Operation</Zone>
+    <Zone>Field</Zone>
+    <Zone>Station</Zone>
+    <ActorGrouping>
+        <id>22</id>
+        <name>Parties involved</name>
+        <description></description>
+        <Actor>
+            <id>74</id>
+            <name>DEUC</name>
+            <description>&lt;p&gt;The Distributed Energy Unit Controller represents an addressable control interface that controls a specific Distributed Energy Unit. Depending on the controlled DEU, the DEUC includes DER, load or storage controllers on the field zone from the SGAM perspective. DEUCs provide the hardware specific interface to control DEUs, and establish the media conversion where required. In VHPready, this unit is described as &amp;ldquo;gateway&amp;rdquo;.&lt;/p&gt;
+</description>
+            <furtherInformation></furtherInformation>
+            <domain>DER</domain>
+            <domain>Customer Premise</domain>
+            <zone>Field</zone>
+            <zone>Process</zone>
+        </Actor>
+        <Actor>
+            <id>67</id>
+            <name>VPPOP</name>
+            <description>&lt;p&gt;The Virtual Power Plant Operator of a remote controlled VPP represents the central control centre. The VPPOP creates aggregated forecasts to trade energy on the energy market and calculates individual schedules for each DEUOP or DEU to control the energy production (or load) that the VPP inserts (drains). While physically the VPPOP may be connected with a DEUC directly, if no dedicated DEUOP exists, the communication always needs to be either VPPOP-DEUOP or DEUOP-DEUC, depending on which unit (VPPOP or DEUC) integrates the missing DEUOP interface.&lt;/p&gt;
+
+&lt;p&gt;In case &amp;ldquo;ancillary services&amp;rdquo; are legible and negotiated, the distribution system operator (DSO) can send grid requirements to the VPPOP. DEU control messages initiated by the DSO are then forwarded via the VPPOP to the addressed DEUOP or DEUC. In VHPready, the VPPOP is the control centre&lt;a href="#_ftn1" name="_ftnref1" title=""&gt;[1]&lt;/a&gt; of the VPP, comparable to the same instance of traditional large-scale power plants. VHPready is an industry alliance developing industry standards for managing DERs to participate in the energy trade. &lt;a href="#_ftn2" name="_ftnref2" title=""&gt;[2]&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href="#_ftnref1" name="_ftn1" title=""&gt;[1]&lt;/a&gt; In German, VHPready mentions the control center &amp;ldquo;Leitstelle&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="#_ftnref2" name="_ftn2" title=""&gt;[2]&lt;/a&gt; For further details about VHPready see https://www.vhpready.com/about-us/&lt;/p&gt;
+</description>
+            <furtherInformation></furtherInformation>
+            <domain>DER</domain>
+            <domain>Consumption</domain>
+            <zone>Market</zone>
+            <zone>Enterprise</zone>
+            <zone>Operation</zone>
+        </Actor>
+        <Actor>
+            <id>120</id>
+            <name>DSO</name>
+            <description>&lt;p&gt;The DSO owns and manages an electric power distribution grid, which is naturally confined to certain areas in which the DSO operates in a rather solid monopoly situation.&amp;nbsp;Therefore, regulation policies commonly exclude DSOs from any energy trading business. While DSOs manage the interconnections with the superior transmission system and neighboring distribution systems, they have no direct control over the total energy flows across their grids. Still, they are responsible for safe and reliable operation of the electric power distribution across their grids, and may interfere with power flows only to maintain grid stability.&lt;/p&gt;
+</description>
+            <furtherInformation></furtherInformation>
+            <domain>Distribution</domain>
+            <zone>Enterprise</zone>
+            <zone>Operation</zone>
+            <zone>Field</zone>
+            <zone>Station</zone>
+            <zone>Process</zone>
+        </Actor>
+    </ActorGrouping>
+    <Condition>
+        <assumption>&lt;p&gt;DEUCs have measurement instruments installed&lt;/p&gt;
+</assumption>
+        <trigerringEvent></trigerringEvent>
+        <scope></scope>
+    </Condition>
+    <Diagram>
+        <name>Static View</name>
+        <URI></URI>
+        <drawingType>other</drawingType>
+        <description></description>
+    </Diagram>
+    <KeyPerformanceIndicator>
+        <id>20</id>
+        <name>Power grid stability</name>
+        <description>&lt;p&gt;If the grid voltage is higher than 50,1 Hz or lower than 49,9 Hz, the power grid fluctuations have to be considered by the DSO&amp;nbsp;and perhaps a first adoption of the schedules have to be done by sending control signals to the VPP.&lt;/p&gt;
+</description>
+        <target></target>
+        <calculationDescription></calculationDescription>
+        <calculationURI></calculationURI>
+    </KeyPerformanceIndicator>
+    <Narrative>
+        <completeDescription>&lt;p&gt;Controlling the electric power system&amp;nbsp;needs a large number of measured date to enable a high supply reliability. Therefore, it is important to know which role (consumer, producer, or prosumer) a VPP and its DEUs take&amp;nbsp;to interact with the electric power system. For observing VPP (and their DEUs), the DEUCs&amp;nbsp;install&amp;nbsp;measuring instruments which provides measured values at a specific time interval so that the VPPOP&amp;nbsp;as well as the DSO&amp;nbsp;can check the current power system state and can interact in the schedules of the VPP.&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;The measurement instruments have to record live data about the electric power system. These data shall include voltage, power, apparent power and reactive power as well as the cos-phi-values; it would be preferable to record further values for controlling the electric power system. These data are centrally stored by the DEUC so that all data are available for the VPPOP and DSO. For instance, some&amp;nbsp;meter data are needed for billing the power consumption; however these data are not time-sensitive and can be stored in lower time intervals.&amp;nbsp;Based on the measured data, an intelligent voltage regulation can be implemented. Additionally, a state estimation can be done for single power system territories, for instance to get an overview on PV system which can be used as reference value for future PV systems. However, the main task is to observe the electric power system and to guarantee the power grid stability.&lt;/p&gt;
+
+&lt;p&gt;The VPPOP&amp;nbsp;can use the data to proof the compliance of schedules, and if necessary, to readjustment control signals to fulfil the schedules. The DSO&amp;nbsp;requests the measured data to check whether contractions are fulfilled and to regulate the billing.&lt;/p&gt;
+</completeDescription>
+        <shortDescription>&lt;p&gt;The measured data which are collected within this use case by the DEUCs are the basis for creating the bill for the amount of electricity and the electric power grid usage. Additionally, these data support the verification of the agreed load, the voltage regulation and monitoring of the current electric power grid state as well as the state estimation of the power grid territory. Thus, DEUCs have to provide the measured values at a specific time interval which are stored and available for the DSO and VPPOP.&lt;/p&gt;
+</shortDescription>
+    </Narrative>
+    <RelatedObjective>
+        <description></description>
+        <id>21</id>
+        <name>fix  imbalances in the electric power system</name>
+    </RelatedObjective>
+    <RelatedObjective>
+        <description></description>
+        <id>22</id>
+        <name>Guaranteeing the electric power system stability</name>
+    </RelatedObjective>
+    <Reference>
+        <id>50</id>
+        <impact>Basis for the initial creation</impact>
+        <name>In2VPP – UC: 8.5 Übermitteln von Anforderungen des Netzes</name>
+        <originatorOrganisation>BMWi</originatorOrganisation>
+        <status>final</status>
+        <type>Deliverable</type>
+        <URI>http://www.in2vpp.de/</URI>
+    </Reference>
+    <Reference>
+        <id>51</id>
+        <impact>Definition of actors</impact>
+        <name>IEC Electropedia</name>
+        <originatorOrganisation>IEC</originatorOrganisation>
+        <status></status>
+        <type>Website</type>
+        <URI>http://www.electropedia.org</URI>
+    </Reference>
+    <Reference>
+        <id>52</id>
+        <impact>Definition of actors and used protocols</impact>
+        <name>Smart Grid Standards Map</name>
+        <originatorOrganisation>IEC</originatorOrganisation>
+        <status></status>
+        <type>Website</type>
+        <URI>http://smartgridstandardsmap.com</URI>
+    </Reference>
+    <Scenario>
+        <description>&lt;p&gt;The DEUC sends meter data, gathered e.g. by a Smart Meter,&amp;nbsp;about the energy load and/or production of a&amp;nbsp;DEU to the DSO and VPPOP.&lt;/p&gt;
+</description>
+        <id>32</id>
+        <name>Transfer meter data</name>
+        <number>01</number>
+        <postCondition>Meta data are available for the DSO and VPPOP.</postCondition>
+        <preCondition>DEUC has installed a revenue meter</preCondition>
+        <triggeringEvent>Periodical measurement</triggeringEvent>
+        <PrimaryActor>
+            <id>74</id>
+            <name>DEUC</name>
+        </PrimaryActor>
+        <Step>
+            <description>&lt;p&gt;The Revenue Meter&amp;nbsp;provides&amp;nbsp;the current power load and / or production of a&amp;nbsp;DEU&amp;nbsp;at a specific time interval to the DEUC.&lt;/p&gt;
+</description>
+            <event>Periodically measurement</event>
+            <id>174</id>
+            <name>Provide meter data</name>
+            <number>01</number>
+            <service>CREATE</service>
+            <InformationProducer>
+                <id>218</id>
+                <name>Revenue Meter</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>74</id>
+                <name>DEUC</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>187</id>
+                <name>Current load</name>
+            </InformationObject>
+            <InformationObject>
+                <id>188</id>
+                <name>Current production</name>
+            </InformationObject>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The DEUC transmits the meter&amp;nbsp;data to the DSO.&lt;/p&gt;
+</description>
+            <event>DSO requests Meter Data</event>
+            <id>176</id>
+            <name>Transfer meter data to DSO</name>
+            <number>03</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>74</id>
+                <name>DEUC</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>120</id>
+                <name>DSO</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>203</id>
+                <name>Interval metering information</name>
+            </InformationObject>
+            <Requirements>
+                <Requirement>
+                    <id>76</id>
+                    <name>Transmission time for revenue meter</name>
+                    <requirementCategoryId>13</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The DEUC transmits the meter data to the VPPOP.&lt;/p&gt;
+</description>
+            <event>VPPOP requests meter data</event>
+            <id>177</id>
+            <name>Transfer meter data to VPPOP</name>
+            <number>03</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>74</id>
+                <name>DEUC</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>67</id>
+                <name>VPPOP</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>203</id>
+                <name>Interval metering information</name>
+            </InformationObject>
+        </Step>
+    </Scenario>
+    <Scenario>
+        <description>&lt;p&gt;The DEUC sends measured data&amp;nbsp;about the electric power system state on a specific measurement point (mains feed-in point) to the DSO and VPPOP.&lt;/p&gt;
+</description>
+        <id>33</id>
+        <name>Transfer measured data</name>
+        <number>02</number>
+        <postCondition>Measured values are available for the DSO and VPPOP.</postCondition>
+        <preCondition>Measurement instrument was installed by the DEUC</preCondition>
+        <triggeringEvent>Periodical measurement</triggeringEvent>
+        <PrimaryActor>
+            <id>74</id>
+            <name>DEUC</name>
+        </PrimaryActor>
+        <Step>
+            <description>&lt;p&gt;The measurement instrument provides the current power grid state at a measurement point in the electric power grid to the DEUC.&lt;/p&gt;
+</description>
+            <event>Periodically measurement</event>
+            <id>178</id>
+            <name>Provide measured data</name>
+            <number>01</number>
+            <service>CREATE</service>
+            <InformationProducer>
+                <id>217</id>
+                <name>Measurement instrument</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>74</id>
+                <name>DEUC</name>
+            </InformationReceiver>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The DEUC transmits the measured data to the DSO.&lt;/p&gt;
+</description>
+            <event>DSO requests measured data</event>
+            <id>179</id>
+            <name>Transfer measured data to DSO</name>
+            <number>02</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>74</id>
+                <name>DEUC</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>120</id>
+                <name>DSO</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>202</id>
+                <name>Actual power system measurement</name>
+            </InformationObject>
+            <Requirements>
+                <Requirement>
+                    <id>77</id>
+                    <name>Transmission time for measurement instruments</name>
+                    <requirementCategoryId>13</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The DEUC transfers the measured data to the VPPOP.&lt;/p&gt;
+</description>
+            <event>VPPOP requests measured data</event>
+            <id>180</id>
+            <name>Transfer measured data to VPPOP</name>
+            <number>03</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>74</id>
+                <name>DEUC</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>67</id>
+                <name>VPPOP</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>202</id>
+                <name>Actual power system measurement</name>
+            </InformationObject>
+        </Step>
+    </Scenario>
+    <UseCaseRelation>
+        <type>Associate</type>
+        <RelatedUseCase>
+            <id>40</id>
+            <name>VPP-10: Fix imbalances in the electric power system directly by the DSO</name>
+        </RelatedUseCase>
+    </UseCaseRelation>
+    <UseCaseRelation>
+        <type>Associate</type>
+        <RelatedUseCase>
+            <id>28</id>
+            <name>VPP-07: Transmit adjustments on the planned schedule to the VPPOP</name>
+        </RelatedUseCase>
+    </UseCaseRelation>
+    <VersionInformation>
+        <approvalStatus>Extended Version</approvalStatus>
+        <areaOfExpertise></areaOfExpertise>
+        <changes>&lt;p&gt;Transmission to the IEC 62559-2 Template, translation in English and expansion of additional data&lt;/p&gt;
+</changes>
+        <date>2017-03-04T00:00:00.000+01:00</date>
+        <domainExpert></domainExpert>
+        <title></title>
+        <number>1.1</number>
+        <authors>M. Gottschalk</authors>
+    </VersionInformation>
+    <VersionInformation>
+        <approvalStatus>Final</approvalStatus>
+        <changes>&lt;span lang="EN-US"&gt;Final description of the use case “3.4 Erheben von Messdaten (VK)”&lt;/span&gt;</changes>
+        <date>2014-02-03T00:00:00.000+01:00</date>
+        <number>1.0</number>
+        <authors>M. Specht, M. Wagler</authors>
+    </VersionInformation>
+    <InformationObjects>
+        <InformationObject>
+            <id>173</id>
+            <name>Region</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>174</id>
+            <name>Time</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>175</id>
+            <name>Assets list</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>176</id>
+            <name>Schedule list for assets</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>177</id>
+            <name>List of load profiles</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>178</id>
+            <name>List of production profiles</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>179</id>
+            <name>Weather forecast</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>180</id>
+            <name>Load forecast</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>181</id>
+            <name>Production forecast</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>182</id>
+            <name>Abstracted electric power grid requirements</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>183</id>
+            <name>Electric power grid utilization</name>
+            <Requirements>
+                <Requirement>
+                    <id>75</id>
+                    <requirementCategoryId>3</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </InformationObject>
+        <InformationObject>
+            <id>184</id>
+            <name>Planned performance without schedule</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>185</id>
+            <name>Control Signal</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>186</id>
+            <name>Mode Notification</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>187</id>
+            <name>Current load</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>188</id>
+            <name>Current production</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>189</id>
+            <name>Power values</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>202</id>
+            <name>Actual power system measurement</name>
+            <Requirements/>
+        </InformationObject>
+        <InformationObject>
+            <id>203</id>
+            <name>Interval metering information</name>
+            <Requirements/>
+        </InformationObject>
+    </InformationObjects>
+	<RequirementLibrary>
+		<RequirementCategory>
+			<description>Within this category, the specification from VHPReady is transferred to the requirements list of this use case. The VHPReady specification describes the communication between the VPP operator and the station control of the distributed energy, which is called technical unit in the VHPReady specificartion.</description>
+			<id>3</id>
+			<name>VHPR</name>
+		</RequirementCategory>
+		<RequirementCategory>
+			<description></description>
+			<id>6</id>
+			<name>R</name>
+		</RequirementCategory>
+		<RequirementCategory>
+			<description>Quality of Service (QoS) Issues address availability of the system, such as accepted downtime, recovery, backup, rollback, etc. QoS issues also address accuracy and precision of data, the frequency of data exchange and the necessary flexibility for future changes.</description>
+			<id>13</id>
+			<name>QoS</name>
+		</RequirementCategory>
+	</RequirementLibrary>
+	<Glossary>
+		<term>
+			<name>Assets</name>
+			<description>Include DER and consumer which are participant of the VPP</description>
+		</term>
+		<term>
+			<name>DER</name>
+			<description>Distributed Energy Resources</description>
+		</term>
+		<term>
+			<name>EMS</name>
+			<description>Energy Management System</description>
+		</term>
+		<term>
+			<name>VPP</name>
+			<description>Virtual Power Plant</description>
+		</term>
+		<term>
+			<name>ICCP</name>
+			<description>Inter-Control Center Communication Protocol</description>
+		</term>
+		<term>
+			<name>Electric Power Grid State</name>
+			<description>State of the electric power grid, it includes the age and utilization of the assets as well as the current voltage, frequency and thermal loads on the power grid.</description>
+		</term>
+		<term>
+			<name>Grid Connection Point</name>
+			<description>Place where the DER is connected to the electric power grid</description>
+		</term>
+		<term>
+			<name>Control room</name>
+			<description>The collection of data for monitoring and processing systems to optimize them, like power plants and the electric power grid)</description>
+		</term>
+		<term>
+			<name>Control systems</name>
+			<description>Systems to execute the tasks of the control room</description>
+		</term>
+		<term>
+			<name>kW</name>
+			<description>Kilowatt</description>
+		</term>
+		<term>
+			<name>Measured values</name>
+			<description>Live data from the measuring points</description>
+		</term>
+		<term>
+			<name>Meter data</name>
+			<description>Data which are relevant for the bill; thus these data are transmitted at longer intervals</description>
+		</term>
+</Glossary>
+</UseCase>

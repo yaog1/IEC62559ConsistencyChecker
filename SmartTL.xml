@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UseCase>
+    <id>ExampleUCSTL01</id>
+    <name>Implementing a smart traffic light system in Oldenburg</name>
+    <keywords>smart traffic lights sensor, traffic, cars, buses, bicycle</keywords>
+    <levelOfDepth>Use Case</levelOfDepth>
+    <namespace></namespace>
+    <prioritisation>Mandatory</prioritisation>
+    <scope>&lt;p&gt;Traffic congestion is a common problem in many cities and that bring a lot of problems. These problems can be loss of man-hours, accident, missed opportunities, noise pollution, air-pollution, increased fuel consumption, increased tendency to violate traffic rules. The city traffic shall be supported with a smart traffic light system, that combines the traditional technology with sensors and artificial intelligence to route the city traffic.&lt;/p&gt;
+</scope>
+    <viewPoint></viewPoint>
+    <Domain>smart cities</Domain>
+    <Zone>smart traffic</Zone>
+    <ActorGrouping>
+        <id>49</id>
+        <name>Hadware</name>
+        <description>&lt;p&gt;Whole Hardware systems that can also contain software parts.&lt;/p&gt;
+</description>
+        <Actor>
+            <id>446</id>
+            <name>Bus</name>
+            <description>&lt;p&gt;The bus is a large road vehicle that is applied in cities to carry more than five passengers.&lt;/p&gt;
+</description>
+            <furtherInformation>City buses are equipped with a controller to communicate with control boxes of the traffic lights.</furtherInformation>
+        </Actor>
+        <Actor>
+            <id>447</id>
+            <name>Controller</name>
+            <description>&lt;p&gt;The controller is a sender and receiver for the bus driver to communicate with this control box of the traffic light.&lt;/p&gt;
+</description>
+            <furtherInformation></furtherInformation>
+        </Actor>
+        <Actor>
+            <id>448</id>
+            <name>Control box</name>
+            <description>&lt;p&gt;The control box is the intelligent part of the traffic light to collect data, to communicate with an analysis software and to execute the switching operatin of the traffic light.&lt;/p&gt;
+</description>
+            <furtherInformation></furtherInformation>
+        </Actor>
+        <Actor>
+            <id>449</id>
+            <name>Traffic Light</name>
+            <description>&lt;p&gt;The traffic light is a signaling device at the road intersection to control the traffic flow.&lt;/p&gt;
+</description>
+            <furtherInformation>Within the Use Case traffic lights are equipped with control boxes to enable an intelligent behavior of the traffic lights.</furtherInformation>
+        </Actor>
+        <Actor>
+            <id>450</id>
+            <name>Video Camera</name>
+            <description>&lt;p&gt;The video camera records the current traffic flow.&lt;/p&gt;
+</description>
+            <furtherInformation></furtherInformation>
+        </Actor>
+        <Actor>
+            <id>451</id>
+            <name>IR Camera</name>
+            <description>&lt;p&gt;The IR camera records thermal images on the current traffic load.&lt;/p&gt;
+</description>
+            <furtherInformation></furtherInformation>
+        </Actor>
+        <Actor>
+            <id>452</id>
+            <name>Radar</name>
+            <description>&lt;p&gt;The radar measures the current speed of the road users in a 500 meter radius of the traffic light.&lt;/p&gt;
+</description>
+            <furtherInformation></furtherInformation>
+        </Actor>
+    </ActorGrouping>
+    <ActorGrouping>
+        <id>50</id>
+        <name>Software</name>
+        <description>&lt;p&gt;Alle software systems&lt;/p&gt;
+</description>
+        <Actor>
+            <id>453</id>
+            <name>Analysis Software</name>
+            <description>&lt;p&gt;The analysis software gets all traffic relavant data from the control boxes and other services like the bus shedule planner to calculate the optimal time to switch the traffic lights.&lt;/p&gt;
+</description>
+            <furtherInformation></furtherInformation>
+        </Actor>
+		 <Actor>
+            <id>484845415</id>
+            <name>Mouse</name>
+            <description>&lt;p&gt;Mouse in the house&lt;/p&gt;
+</description>
+            <furtherInformation></furtherInformation>
+        </Actor>
+    </ActorGrouping>
+    <Condition>
+        <assumption>&lt;p&gt;Connections to traffic management may be affected by city government.&lt;/p&gt;
+</assumption>
+        <trigerringEvent></trigerringEvent>
+        <PreCondition>
+            <content>City regulations have to be captured completely before this kind of smart traffic lights system can be implemented.</content>
+        </PreCondition>
+        <scope></scope>
+    </Condition>
+    <GeneralRemark>
+        <content>Example for a use case by using the IEC 62559 Use Case Methodology.</content>
+    </GeneralRemark>
+    <GeneralRemark>
+        <content>This use case does not claim to be exhaustive regarding the functionality of a smart traffic lights system.</content>
+    </GeneralRemark>
+    <KeyPerformanceIndicator>
+        <id>57</id>
+        <name>Peoples safety</name>
+        <description>&lt;p&gt;Implementing a smart traffic lights system can improve the safety in daily traffic. The drivers will be supported in following the rules. It can be proofed by the number of accidents in traffic, if it is reduced the KPI is accepted.&lt;/p&gt;
+</description>
+        <target></target>
+        <calculationDescription></calculationDescription>
+        <calculationURI></calculationURI>
+        <referenceToMentionedUseCaseObjective>Peoples safety</referenceToMentionedUseCaseObjective>
+    </KeyPerformanceIndicator>	
+    <KeyPerformanceIndicator>
+        <id>58</id>
+        <name>Daily city life support</name>
+        <description>&lt;p&gt;Lorem Ipsum.&lt;/p&gt;
+		</description>
+        <target></target>
+        <calculationDescription></calculationDescription>
+        <calculationURI></calculationURI>
+        <referenceToMentionedUseCaseObjective>Daily life</referenceToMentionedUseCaseObjective>
+    </KeyPerformanceIndicator>
+    <Narrative>
+        <completeDescription>&lt;p&gt;Traditionally traffic light systems use a fixed time shift for various traffic directions and comply with a particular cycle while switching from one signal to another. Many cities with those systems have huge problems with congestion that brings a lot of problems. A smart traffic light system aims to supporting the daily life in city traffic by decreasing the number of traffic congestions. This way the environment shall be protected by reducing noise pollution and air-pollution which were resulted by congestions. Also peoples safety is an objective, the smart system can help decreasing the tendeny to violate traffic rules resulted by delays. This way accidents can be reduced. The combination of the traditional technology with sensors and artificial intelligence to route the citty traffic can help in many cases. A smart traffic light system can help for example routing the buses of&amp;nbsp;local public transport in the city. When a bus has delay the traffic lights can priorise this bus with more green lights in his upcoming direction. Furthermore controlling the bicycle traffic is possible, the cyclists can use an app to contact the traffic light and get this way green lights by prioritize bicycles [oldenburgbicycles01]. The private vehicle traffic can be harmonized by observing the traffic density. This three types of traffic can be handled with such smart system using sensors and artificial intelligence while communicating with the environment.&lt;/p&gt;
+</completeDescription>
+        <shortDescription>&lt;p&gt;A smart traffic light system shall improve the daily city traffic by intelligently routing mechanisms. Congestion is a common problem in many cities with traditional traffic lights. Congestion brings a lot of problems like loss of man-hours, accidents, missed opportunities, noise pollution, air-pollution, increased fuel consumption and increased tendency to violate traffic rules. The daily life in city traffic shall be supported with a smart traffic light system, that combines the traditional technology with sensors and artificial intelligence to route the citty traffic. A smart traffic light system can help for example routing the buses of&amp;nbsp;local public transport in the city and this way prevent delay in their shedule. Furthermore controlling the bicycle traffic and private car traffic is aimed too.&lt;/p&gt;
+</shortDescription>
+    </Narrative>
+    <RelatedObjective>
+        <description>&lt;p&gt;Aim of the use case is improving the city traffic by decreasing the number of traffic congestions.&lt;/p&gt;
+</description>
+        <id>112</id>
+        <name>Daily city life support</name>
+    </RelatedObjective>
+    <RelatedObjective>
+        <description>&lt;p&gt;Congestions result in noise pollution and air-pollution, smart routing can help solving those problems.&lt;/p&gt;
+</description>
+        <id>114</id>
+        <name>Environment protection</name>
+    </RelatedObjective>
+    <RelatedObjective>
+        <description>&lt;p&gt;A smart traffic lights system can decrease tendency to violate traffic rules. And this way the number of accidents in daily city traffic can be reduced.&lt;/p&gt;
+</description>
+        <id>115</id>
+        <name>Peoples safety</name>
+    </RelatedObjective>
+    <Reference>
+        <description>&lt;p&gt;An Intelligent System for Traffic Control in Smart Cities: A Case Study. General Information about the scope.&lt;/p&gt;
+</description>
+        <id>53</id>
+        <impact>Medium</impact>
+        <name>SmartCities01</name>
+        <originatorOrganisation> D. E. Okene , E. I. Okhueleigbe </originatorOrganisation>
+        <status>Final</status>
+        <type>Article</type>
+        <URI>http://article.sciencepublishinggroup.com/pdf/10.11648.j.ajai.20170101.15.pdf</URI>
+    </Reference>
+    <Reference>
+        <description>&lt;p&gt;Oldenburg gets honored for bycicyle friendlyness. Thermal cameras are used to track incoming bicycles and give offer them more green light phases on traffic light.&lt;/p&gt;
+</description>
+        <id>55</id>
+        <impact>High</impact>
+        <name>OldenburgBicycles01</name>
+        <originatorOrganisation>NWZ</originatorOrganisation>
+        <status>Final</status>
+        <type>Journal</type>
+        <URI>https://www.nwzonline.de/oldenburg/wirtschaft/stadt-beim-thema-fahrrad-an-der-spitze_a_31,1,2835660470.html</URI>
+    </Reference>
+    <Reference>
+        <description>&lt;p&gt;Sensor Based Traffic Light System. General information about traffic management scope.&lt;/p&gt;
+</description>
+        <id>56</id>
+        <impact>Medium</impact>
+        <name>TrafficManagement01</name>
+        <originatorOrganisation>A. Mateen, A. Khalid, F. Arif</originatorOrganisation>
+        <status>Final</status>
+        <type>Article</type>
+        <URI>https://www.researchgate.net/publication/283815376_A_Sensor-Based_Light_Signal_Controller</URI>
+    </Reference>
+    <Reference>
+        <description>&lt;p&gt;Some benefits of smart traffic lights ussage. Buses with delay can get better green traffic light phases.&lt;/p&gt;
+</description>
+        <id>57</id>
+        <impact>High</impact>
+        <name>SmartTrafficLight01</name>
+        <originatorOrganisation>Studi38, T. Pobieda, M. Hofmann</originatorOrganisation>
+        <status>Final</status>
+        <type>Article</type>
+        <URI>http://studi38.de/wissenschaft/die-smarte-ampel/</URI>
+    </Reference>
+    <Reference>
+        <description>&lt;p&gt;Some benefits by using smart traffic lights. Bicycle app.&lt;/p&gt;
+</description>
+        <id>58</id>
+        <impact>Medium</impact>
+        <name>SmartTrafficLight02</name>
+        <originatorOrganisation>NWZ</originatorOrganisation>
+        <status>Final</status>
+        <type>Journal</type>
+        <URI>https://www.nwzonline.de/auto-motor/intelligente-verkehrssteuerung-mehr-als-rot-gelb-gruen-was-ampeln-alles-koennen_a_50,0,2289657138.html</URI>
+    </Reference>
+    <Scenario>
+        <description>&lt;p&gt;The bus is near a recording system, the bus communicates information which bus line it is. The Analysis Software gets this information and compares the actual state of the bus with the bus shedule planner. The arrival will be estimated and the this information will be send to the &lt;strong&gt;bus journey planner service&lt;/strong&gt;. If the bus is much in delay eventually further scenario will be triggered.&lt;/p&gt;
+</description>
+        <id>77</id>
+        <name>Update shedule state</name>
+        <number>01</number>
+        <postCondition>Shedule status updated</postCondition>
+        <preCondition>Bus passes a traffic light</preCondition>
+        <triggeringEvent>Bus was detected</triggeringEvent>
+        <PrimaryActor>
+            <id>453</id>
+            <name>Analysis Software</name>
+        </PrimaryActor>
+        <Step>
+            <description>&lt;p&gt;The bus controller send an information object to the control box to register the bus and its distance to the traffic light and its speed.&lt;/p&gt;
+</description>
+            <event>Bus passes a smart traffic light.</event>
+            <id>326</id>
+            <name>Register bus on traffic light</name>
+            <number>01</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>447</id>
+                <name>Controller</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>448</id>
+                <name>Control box</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>193</id>
+                <name>Bus data object</name>
+            </InformationObject>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The control box forwards the information object and further traffic data to the analysis software.&lt;/p&gt;
+			</description>
+            <event>Got bus registration</event>
+            <id>327</id>
+            <name>Collection further traffic data (Bus case)</name>
+            <number>02</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>448</id>
+                <name>Control box</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>453</id>
+                <name>Analysis Software</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>193</id>
+                <name>Bus data object</name>
+            </InformationObject>
+            <InformationObject>
+                <id>194</id>
+                <name>Traffic data object</name>
+            </InformationObject>
+            <Requirements>
+                <Requirement>
+                    <id>148</id>
+                    <name>Data transfer duration</name>
+                    <requirementCategoryId>10</requirementCategoryId>
+                </Requirement>
+                <Requirement>
+                    <id>152</id>
+                    <name>Data protection</name>
+                    <requirementCategoryId>13</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The analysis software evaluate the control box data that summarizes data of video cameras, radar systems and vehicle controllers. After evaluating these data, the analysis software creates an information object to inform the bus planner service about the bus state and estimated arrive.&lt;/p&gt;
+</description>
+            <event>Got data from the controller box</event>
+            <id>328</id>
+            <name>Evaluating traffic data (Bus state)</name>
+            <number>03</number>
+            <service>CREATE</service>
+            <InformationProducer>
+                <id>453</id>
+                <name>Analysis Software</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>453</id>
+                <name>Analysis Software</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>196</id>
+                <name>bus state object</name>
+            </InformationObject>
+            <Requirements>
+                <Requirement>
+                    <id>150</id>
+                    <name>Data size</name>
+                    <requirementCategoryId>12</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The analysis software sends an information object to the bus planner service as an state update.&lt;/p&gt;
+</description>
+            <event>Created Information Object for the bus planner service</event>
+            <id>329</id>
+            <name>Send information to the bus planner service</name>
+            <number>04</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>453</id>
+                <name>Analysis Software</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>456</id>
+                <name>Bus planner service</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>196</id>
+                <name>bus state object</name>
+            </InformationObject>
+            <Requirements>
+                <Requirement>
+                    <id>151</id>
+                    <name>Data size</name>
+                    <requirementCategoryId>12</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </Step>
+    </Scenario>
+    <Scenario>
+        <description>&lt;p&gt;One or more cyclists are in the near of an smart traffic light. The IR Camera detects the cyclists and collects trafic information about them, which will be send to the Control box. Afterwards the Control box will send the information to the Analysis Software. The Analysis Software will evaluate the traffic data and than decide how to act. When the Software decides to prioritize the cyclists, than this decision will be send to the control box and the traffic lights will switch green.&lt;/p&gt;
+</description>
+        <id>78</id>
+        <name>Prioritize bicycle</name>
+        <number>02</number>
+        <postCondition>The Traffic Light is green</postCondition>
+        <preCondition>The Traffic Light is red</preCondition>
+        <triggeringEvent>Cyclists passing a IR Camera.</triggeringEvent>
+        <PrimaryActor>
+            <id>451</id>
+            <name>Cam</name>
+        </PrimaryActor>
+        <Step>
+            <description>&lt;p&gt;The IR Camera detects one or more cyclists and collects &lt;strong&gt;information &lt;/strong&gt;of the distance to the traffic light and the speed of every cyclist. The IR will create a information object for every cyclist contraining the collected &lt;strong&gt;informations &lt;/strong&gt;to share it with the Control box.&lt;/p&gt;
+</description>
+            <event>One or more cylists passing a IR Camera.</event>
+            <id>330</id>
+            <name>Detect cyclists</name>
+            <number>01</number>
+            <service>CREATE</service>
+            <InformationProducer>
+                <id>451</id>
+                <name>Cam</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>451</id>
+                <name>IR Camera</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>197</id>
+                <name>Bicycle data object</name>
+            </InformationObject>
+            <Requirements>
+                <Requirement>
+                    <id>155</id>
+                    <name>Data transfer duration</name>
+                    <requirementCategoryId>10</requirementCategoryId>
+                </Requirement>
+                <Requirement>
+                    <id>156</id>
+                    <name>Differentiate the traffic participant</name>
+                    <requirementCategoryId>15</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The IR Camera sends an information object to the control box.&lt;/p&gt;
+</description>
+            <event>bicycle data object has been created.</event>
+            <id>331</id>
+            <name>Send bicycle data to the control box</name>
+            <number>02</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>451</id>
+                <name>IR Camera</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>448</id>
+                <name>Control box</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>197</id>
+                <name>Bicycle data object</name>
+            </InformationObject>
+            <Requirements>
+                <Requirement>
+                    <id>158</id>
+                    <name>Data protection</name>
+                    <requirementCategoryId>13</requirementCategoryId>
+                </Requirement>
+                <Requirement>
+                    <id>159</id>
+                    <name>Data transfer duration</name>
+                    <requirementCategoryId>10</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The control box forwards the information object and further traffic data to the analysis software. That includes not only data about the bicycle traffic.&lt;/p&gt;
+</description>
+            <event>Got bus data object.</event>
+            <id>332</id>
+            <name>Collection further traffic data (Bicycle case)</name>
+            <number>03</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>448</id>
+                <name>Control box</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>453</id>
+                <name>Analysis Software</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>194</id>
+                <name>Traffic data object</name>
+            </InformationObject>
+            <InformationObject>
+                <id>197</id>
+                <name>Bicycle data object</name>
+            </InformationObject>
+            <Requirements>
+                <Requirement>
+                    <id>161</id>
+                    <name>Data transfer duration</name>
+                    <requirementCategoryId>10</requirementCategoryId>
+                </Requirement>
+                <Requirement>
+                    <id>162</id>
+                    <name>Data protection</name>
+                    <requirementCategoryId>13</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The analysis software evaluate the control box data that summarizes data of video cameras, radar systems and vehicle controllers. After evaluating these data, the analysis software creates an information object to instruc the Traffic Light.&lt;/p&gt;
+</description>
+            <event>Got bicycle data from the Control box.</event>
+            <id>333</id>
+            <name>Evaluating traffic data (Bicycle)</name>
+            <number>04</number>
+            <service>CREATE</service>
+            <InformationProducer>
+                <id>453</id>
+                <name>Analysis Software</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>453</id>
+                <name>Analysis Software</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>198</id>
+                <name>Traffic light instructions</name>
+            </InformationObject>
+			<Requirements>
+                <Requirement>
+                    <id>99999</id>
+                    <name>Lorem Ipsum</name>
+                    <requirementCategoryId>99</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The analysis software sends an information object to the control box as an instruction to switch the traffic light.&lt;/p&gt;
+</description>
+            <event>Created Traffic light instructions</event>
+            <id>334</id>
+            <name>Send instruction to the control box</name>
+            <number>05</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>453</id>
+                <name>Analysis Software</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>448</id>
+                <name>Control box</name>
+            </InformationReceiver>
+            <InformationObject>
+                <id>198</id>
+                <name>Traffic light instructions</name>
+            </InformationObject>
+            <Requirements>
+                <Requirement>
+                    <id>164</id>
+                    <name>Data transfer duration</name>
+                    <requirementCategoryId>10</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </Step>
+        <Step>
+            <description>&lt;p&gt;The control box executes the instruction from the analysis software and switches the light to green.&lt;/p&gt;
+</description>
+            <event>Got Traffic light instruction from the Analysis Software.</event>
+            <id>335</id>
+            <name>Switching the traffic light</name>
+            <number>06</number>
+            <service>GET</service>
+            <InformationProducer>
+                <id>448</id>
+                <name>Control box</name>
+            </InformationProducer>
+            <InformationReceiver>
+                <id>449</id>
+                <name>Traffic Light</name>
+            </InformationReceiver>
+			<InformationObject>
+                <id>999</id>
+                <name>Lorem Ips</name>
+            </InformationObject>
+        </Step>
+    </Scenario>
+	<Scenario>
+	    <description>bus
+</description>
+        <id>154548</id>
+        <name>Test Scenario</name>
+        <number>03</number>
+        <postCondition>dfdsfds</postCondition>
+        <preCondition>fdgdfgrgrg</preCondition>
+        <triggeringEvent>ererewrewrwerwe</triggeringEvent>
+    </Scenario>
+    <VersionInformation>
+        <approvalStatus>Draft</approvalStatus>
+        <areaOfExpertise></areaOfExpertise>
+        <changes>&lt;p&gt;business cases fixed&lt;/p&gt;
+</changes>
+        <date>2018-11-02T00:00:00.000+01:00</date>
+        <domainExpert></domainExpert>
+        <title>BusinessCases</title>
+        <number>0.9</number>
+        <authors>Yasin Oguz</authors>
+    </VersionInformation>
+    <InformationObjects>
+        <InformationObject>
+            <id>193</id>
+            <name>Bus data object</name>
+            <Requirements>
+                <Requirement>
+                    <id>145</id>
+                    <requirementCategoryId>12</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </InformationObject>
+        <InformationObject>
+            <id>194</id>
+            <name>Traffic data object</name>
+            <Requirements>
+                <Requirement>
+                    <id>147</id>
+                    <requirementCategoryId>12</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </InformationObject>
+        <InformationObject>
+            <id>196</id>
+            <name>bus state object</name>
+            <Requirements>
+                <Requirement>
+                    <id>149</id>
+                    <requirementCategoryId>10</requirementCategoryId>
+                </Requirement>
+				<Requirement>
+                    <id>991919</id>
+                    <requirementCategoryId>909</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </InformationObject>
+        <InformationObject>
+            <id>197</id>
+            <name>Bicycle data object</name>
+            <Requirements>
+                <Requirement>
+                    <id>153</id>
+                    <requirementCategoryId>12</requirementCategoryId>
+                </Requirement>
+                <Requirement>
+                    <id>154</id>
+                    <requirementCategoryId>13</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </InformationObject>
+        <InformationObject>
+            <id>198</id>
+            <name>Traffic light instructions</name>
+            <Requirements>
+                <Requirement>
+                    <id>163</id>
+                    <requirementCategoryId>12</requirementCategoryId>
+                </Requirement>
+            </Requirements>
+        </InformationObject>
+		        <InformationObject>
+            <id>223</id>
+            <name></name>
+        </InformationObject>
+    </InformationObjects>
+<RequirementLibrary>
+ <RequirementCategory>
+    <description>The data collection and transmission require special requirements.</description>
+    <id>9</id>
+    <name>DT</name>
+  </RequirementCategory>
+ <RequirementCategory>
+    <description>The duration of the data transfer shall not exceed 2 seconds.</description>
+    <id>10</id>
+    <name>DT-01</name>
+    <ParentCategory>
+      <id>9</id>
+      <name>DT</name>
+    </ParentCategory>
+  </RequirementCategory>
+ <RequirementCategory>
+    <description>The data size shall not exceed 20 mbit.</description>
+    <id>12</id>
+    <name>DT-03</name>
+    <ParentCategory>
+      <id>9</id>
+      <name>DT</name>
+    </ParentCategory>
+  </RequirementCategory>
+ <RequirementCategory>
+    <description>The data protection of the collected data has to fulfill the terms of data protection laws.</description>
+    <id>13</id>
+    <name>DT-04</name>
+    <ParentCategory>
+      <id>9</id>
+      <name>DT</name>
+    </ParentCategory>
+  </RequirementCategory>
+ <RequirementCategory>
+    <description>All requirements describing a general function of the System.</description>
+    <id>14</id>
+    <name>FR</name>
+  </RequirementCategory>
+ <RequirementCategory>
+    <description>The System have to differentiate between cars, local public transport vehicles and bicycles.</description>
+    <id>15</id>
+    <name>FR-01</name>
+    <ParentCategory>
+      <id>14</id>
+      <name>FR</name>
+    </ParentCategory>
+  </RequirementCategory>
+   <RequirementCategory>
+    <description>loremmmmm ips</description>
+    <id>555</id>
+    <name>FR-01</name>
+    <ParentCategory>
+      <id>331</id>
+      <name>FR</name>
+    </ParentCategory>
+  </RequirementCategory>
+</RequirementLibrary>
+<Glossary>
+	<term>
+		<name>IR</name>
+		<description>infrared</description>
+	</term>
+	<term>
+		<name>mbit</name>
+		<description>megabit</description>
+	</term>
+	<term>
+		<name>DNA</name>
+		<description>Deoxyribonucleic</description>
+	</term>
+</Glossary> 
+</UseCase>

@@ -1,0 +1,256 @@
+------ FINDINGS Rule: 1 ------
+
+WARNING: Rule 1: 'Reference to mentioned use case objectives' not found in existing Use Case 'Objective Names' !!!:
+Attribute: 'Reference to mentioned use case objectives'; section: 1.5 KPI; sequence: 0; element: 1; sentence: 0;
+content: daily life
+
+------ FINDINGS Rule: 2 ------
+
+HINT: Rule 2: '1.5 - Description' has highest similarity to following 'Objective Description':
+Testdata sentence: Attribute: 'Description'; section: 1.5 KPI; sequence: 0; element: 0; sentence: 0;
+content: implement smart traffic light system improve safety daily traffic.
+Highest similarity sentence: Attribute: 'Objective_1_3-Description'; section: 1.3 Scope and Objectives of Use Case; sequence: 0; element: 2; sentence: 0;
+content: a smart traffic light system decrease tendency violate traffic rule.
+similarity value: 50.0
+
+HINT: Rule 2: '1.5 - Description' has highest similarity to following 'Objective Description':
+Testdata sentence: Attribute: 'Description'; section: 1.5 KPI; sequence: 0; element: 0; sentence: 1;
+content: the driver support follow rule.
+Highest similarity sentence: Attribute: 'Objective_1_3-Description'; section: 1.3 Scope and Objectives of Use Case; sequence: 0; element: 2; sentence: 0;
+content: a smart traffic light system decrease tendency violate traffic rule.
+similarity value: 20.0
+
+HINT: Rule 2: '1.5 - Description' has highest similarity to following 'Objective Description':
+Testdata sentence: Attribute: 'Description'; section: 1.5 KPI; sequence: 0; element: 0; sentence: 2;
+content: it proof number accident traffic, reduce kpi accept.
+Highest similarity sentence: Attribute: 'Objective_1_3-Description'; section: 1.3 Scope and Objectives of Use Case; sequence: 0; element: 2; sentence: 1;
+content: and way number accident daily city traffic reduce.
+similarity value: 50.0
+
+------ FINDINGS Rule: 3 ------
+
+WARNING: Rule 3: 'Scenario name' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'Scenario name'; section: 4.1 Overview of Scenarios; sequence: 0; element: 0; sentence: 0;
+content: update shedule state
+
+WARNING: Rule 3: 'Scenario name' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'Scenario name'; section: 4.1 Overview of Scenarios; sequence: 0; element: 2; sentence: 0;
+content: test scenario
+
+------ FINDINGS Rule: 4 ------
+
+HINT: Rule 4: 'Scenario description' sentence  has highest similarity to following 'Complete description' sentence :
+Testdata sentence: Attribute: 'Scenario description'; section: 4.1 Overview of Scenarios; sequence: 0; element: 0; sentence: 0;
+content: the bus near record system, bus communicates information bus line.
+Highest similarity sentence: Attribute: 'Complete description'; section: 1.4 Narrative of Use Case ; sequence: 0; element: 0; sentence: 7;
+content: a smart traffic light system help example routing bus & nbsp; local public transport city.
+similarity value: 25.0
+
+HINT: Rule 4: 'Scenario description' sentence  has highest similarity to following 'Complete description' sentence :
+Testdata sentence: Attribute: 'Scenario description'; section: 4.1 Overview of Scenarios; sequence: 0; element: 0; sentence: 1;
+content: the analysis software get information compare actual state bus bus shedule planner.
+Highest similarity sentence: Attribute: 'Complete description'; section: 1.4 Narrative of Use Case ; sequence: 0; element: 0; sentence: 10;
+content: the private vehicle traffic harmonize observe traffic density.
+similarity value: 14.285714285714285
+
+HINT: Rule 4: 'Scenario description' sentence  has highest similarity to following 'Complete description' sentence :
+Testdata sentence: Attribute: 'Scenario description'; section: 4.1 Overview of Scenarios; sequence: 0; element: 0; sentence: 2;
+content: the arrival estimate information send bus journey planner service.
+Highest similarity sentence: Attribute: 'Complete description'; section: 1.4 Narrative of Use Case ; sequence: 0; element: 0; sentence: 10;
+content: the private vehicle traffic harmonize observe traffic density.
+similarity value: 14.285714285714285
+
+HINT: Rule 4: 'Scenario description' sentence  has highest similarity to following 'Complete description' sentence :
+Testdata sentence: Attribute: 'Scenario description'; section: 4.1 Overview of Scenarios; sequence: 0; element: 0; sentence: 3;
+content: if bus much delay eventual scenario trigger.
+Highest similarity sentence: Attribute: 'Complete description'; section: 1.4 Narrative of Use Case ; sequence: 0; element: 0; sentence: 8;
+content: when bus delay traffic light priorise bus green light upcoming direction.
+similarity value: 28.57142857142857
+
+HINT: Rule 4: 'Scenario description' sentence  has highest similarity to following 'Complete description' sentence :
+Testdata sentence: Attribute: 'Scenario description'; section: 4.1 Overview of Scenarios; sequence: 0; element: 1; sentence: 0;
+content: one cyclists near smart traffic light.
+Highest similarity sentence: Attribute: 'Complete description'; section: 1.4 Narrative of Use Case ; sequence: 0; element: 0; sentence: 0;
+content: traditional traffic light system use fixed time shift various traffic direction comply particular cycle switch one signal another.
+similarity value: 50.0
+
+HINT: Rule 4: 'Scenario description' sentence  has highest similarity to following 'Complete description' sentence :
+Testdata sentence: Attribute: 'Scenario description'; section: 4.1 Overview of Scenarios; sequence: 0; element: 1; sentence: 1;
+content: the ir camera detect cyclist collect trafic information, send control box.
+Highest similarity sentence: Attribute: 'Complete description'; section: 1.4 Narrative of Use Case ; sequence: 0; element: 0; sentence: 9;
+content: furthermore control bicycle traffic possible, cyclist use app contact traffic light get way green light prioritize bicycle [oldenburgbicycles01].
+similarity value: 18.181818181818183
+
+HINT: Rule 4: 'Scenario description' sentence  has highest similarity to following 'Complete description' sentence :
+Testdata sentence: Attribute: 'Scenario description'; section: 4.1 Overview of Scenarios; sequence: 0; element: 1; sentence: 2;
+content: afterwards control box send information analysis software.
+Highest similarity sentence: Attribute: 'Complete description'; section: 1.4 Narrative of Use Case ; sequence: 0; element: 0; sentence: 9;
+content: furthermore control bicycle traffic possible, cyclist use app contact traffic light get way green light prioritize bicycle [oldenburgbicycles01].
+similarity value: 14.285714285714285
+
+HINT: Rule 4: 'Scenario description' sentence  has highest similarity to following 'Complete description' sentence :
+Testdata sentence: Attribute: 'Scenario description'; section: 4.1 Overview of Scenarios; sequence: 0; element: 1; sentence: 3;
+content: the analysis software evaluate traffic data decide act.
+Highest similarity sentence: Attribute: 'Complete description'; section: 1.4 Narrative of Use Case ; sequence: 0; element: 0; sentence: 10;
+content: the private vehicle traffic harmonize observe traffic density.
+similarity value: 28.57142857142857
+
+HINT: Rule 4: 'Scenario description' sentence  has highest similarity to following 'Complete description' sentence :
+Testdata sentence: Attribute: 'Scenario description'; section: 4.1 Overview of Scenarios; sequence: 0; element: 1; sentence: 4;
+content: when software decide prioritize cyclist, decision send control box traffic light switch green.
+Highest similarity sentence: Attribute: 'Complete description'; section: 1.4 Narrative of Use Case ; sequence: 0; element: 0; sentence: 9;
+content: furthermore control bicycle traffic possible, cyclist use app contact traffic light get way green light prioritize bicycle [oldenburgbicycles01].
+similarity value: 46.15384615384615
+
+HINT: Rule 4: 'Scenario description' sentence  has highest similarity to following 'Complete description' sentence :
+Testdata sentence: Attribute: 'Scenario description'; section: 4.1 Overview of Scenarios; sequence: 0; element: 2; sentence: 0;
+content: bus
+Highest similarity sentence: Attribute: 'Complete description'; section: 1.4 Narrative of Use Case ; sequence: 0; element: 0; sentence: 7;
+content: a smart traffic light system help example routing bus & nbsp; local public transport city.
+similarity value: 100.0
+
+------ FINDINGS Rule: 5 ------
+
+WARNING: Rule 5: 'Inf. exchanged (IDs)' not found in existing Use Case 'Inf. ID' !!!:
+Attribute: 'Inf. exchanged (IDs)'; section: 4.2 Steps – Scenarios; sequence: 1; element: 5; sentence: 0;
+content: 999
+
+------ FINDINGS Rule: 6 ------
+
+WARNING: Rule 6: 'Requirements (IDs)' not found in existing Use Case 'Requirement ID' !!!:
+Attribute: 'Requirements (IDs)'; section: 4.2 Steps – Scenarios; sequence: 1; element: 3; sentence: 0;
+content: 99
+
+------ FINDINGS Rule: 7 ------
+
+WARNING: Rule 7: 'Req. ID' not found in existing Use Case 'Requirement ID' !!!:
+Attribute: 'Req. ID'; section: 5 Information Exchanged; sequence: 0; element: 2; sentence: 1;
+content: 909
+
+------ FINDINGS Rule: 8 ------
+
+WARNING: Rule 8: 'Actor name' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'Actor name'; section: 3.1 Actors; sequence: 0; element: 1; sentence: 0;
+content: controller
+
+WARNING: Rule 8: 'Actor name' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'Actor name'; section: 3.1 Actors; sequence: 0; element: 2; sentence: 0;
+content: control box
+
+WARNING: Rule 8: 'Actor name' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'Actor name'; section: 3.1 Actors; sequence: 0; element: 4; sentence: 0;
+content: video camera
+
+WARNING: Rule 8: 'Actor name' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'Actor name'; section: 3.1 Actors; sequence: 0; element: 5; sentence: 0;
+content: ir camera
+
+WARNING: Rule 8: 'Actor name' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'Actor name'; section: 3.1 Actors; sequence: 0; element: 6; sentence: 0;
+content: radar
+
+WARNING: Rule 8: 'Actor name' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'Actor name'; section: 3.1 Actors; sequence: 1; element: 0; sentence: 0;
+content: analysis software
+
+WARNING: Rule 8: 'Actor name' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'Actor name'; section: 3.1 Actors; sequence: 1; element: 1; sentence: 0;
+content: mouse
+
+------ FINDINGS Rule: 9 ------
+
+WARNING: Rule 9: 'Reference - No.' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'No.'; section: 3.2 References; sequence: 0; element: 0; sentence: 0;
+content: smartcities01
+
+WARNING: Rule 9: 'Reference - No.' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'No.'; section: 3.2 References; sequence: 0; element: 2; sentence: 0;
+content: trafficmanagement01
+
+WARNING: Rule 9: 'Reference - No.' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'No.'; section: 3.2 References; sequence: 0; element: 3; sentence: 0;
+content: smarttrafficlight01
+
+WARNING: Rule 9: 'Reference - No.' not found in existing Use Case 'Complete description' !!!:
+Attribute: 'No.'; section: 3.2 References; sequence: 0; element: 4; sentence: 0;
+content: smarttrafficlight02
+
+------ FINDINGS Rule: 10 ------
+
+Number of matched keywords: 2
+
+Matched keywords from section 1.7: bus; bicycle
+
+Some suggested keywords for section 1.7: traffic light; inform; controller; cyclists; box; object; data decide; send; switch; software; state; use; result; camera; problem congestion; direction; delay; decrease; pollution
+
+------ FINDINGS Rule: 11 ------
+
+WARNING: Rule 11: 'Primary actor' not found in existing Use Case 'Actor name' !!!:
+Attribute: 'Primary actor'; section: 4.1 Overview of Scenarios; sequence: 0; element: 1; sentence: 0;
+content: cam
+
+------ FINDINGS Rule: 12 ------
+
+WARNING: Rule 12: 'Scenario' has no 'Step' !!!:
+Scenario name: test scenario; section: 4.1 Overview of Scenarios; sequence: 0; element: 2; sentence: 0
+
+------ FINDINGS Rule: 13 ------
+
+WARNING: Rule 13: 'Information producer (actor)' not found in existing Use Case 'Actor name' !!!:
+Attribute: 'Information producer (actor)'; section: 4.2 Steps – Scenarios; sequence: 1; element: 0; sentence: 0;
+content: cam
+
+------ FINDINGS Rule: 14 ------
+
+WARNING: Rule 14: 'Information receiver (actor)' not found in existing Use Case 'Actor name' !!!:
+Attribute: 'Information receiver (actor)'; section: 4.2 Steps – Scenarios; sequence: 0; element: 3; sentence: 0;
+content: bus planner service
+
+------ FINDINGS Rule: 15 ------
+
+WARNING: Rule 15: Use Case 2 Information Exchanged 'Req. ID' differs from Use Case 1 Information Exchanged 'Req. ID' !!!:
+Attribute: 'Req. ID'; section: 5 Information Exchanged; sequence: 0; element: 2; sentence: 2;
+content: 12
+
+------ FINDINGS Rule: 16 ------
+
+WARNING: Rule 16: 'Actor name' not found in existing Use Case 'Section 4.1 and 4.2' !!!:
+Attribute: 'Actor name'; section: 3.1 Actors; sequence: 1; element: 1; sentence: 0;
+content: mouse
+
+------ FINDINGS Rule: 17 ------
+
+WARNING: Rule 17: 'Reference - No.' not found in existing Use Case 'Document' !!!:
+Attribute: 'No.'; section: 3.2 References; sequence: 0; element: 0; sentence: 0;
+content: smartcities01
+
+WARNING: Rule 17: 'Reference - No.' not found in existing Use Case 'Document' !!!:
+Attribute: 'No.'; section: 3.2 References; sequence: 0; element: 2; sentence: 0;
+content: trafficmanagement01
+
+WARNING: Rule 17: 'Reference - No.' not found in existing Use Case 'Document' !!!:
+Attribute: 'No.'; section: 3.2 References; sequence: 0; element: 3; sentence: 0;
+content: smarttrafficlight01
+
+WARNING: Rule 17: 'Reference - No.' not found in existing Use Case 'Document' !!!:
+Attribute: 'No.'; section: 3.2 References; sequence: 0; element: 4; sentence: 0;
+content: smarttrafficlight02
+
+------ FINDINGS Rule: 18 ------
+
+WARNING: Rule 18: 'Inf. exchanged (IDs)' not found in existing Use Case 'Inf. ID' !!!:
+Attribute: 'Inf. exchanged (IDs)'; section: 5 Information Exchanged; sequence: 0; element: 5; sentence: 0;
+content: 223
+
+------ FINDINGS Rule: 19 ------
+
+WARNING: Rule 19: 'Requirement ID' not found in existing Use Case 'Req. ID' !!!:
+Attribute: 'Requirement ID'; section: 6 Requirements (Optional); sequence: 1; element: 0; sentence: 0;
+content: 555
+
+------ FINDINGS Rule: 20 ------
+
+WARNING: Rule 20: 'Term' not found in existing Use Case 'Document' !!!:
+Attribute: 'Term'; section: 7 Common Terms and Deﬁnitions; sequence: 0; element: 2; sentence: 0;
+content: dna
+
